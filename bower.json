@@ -1,0 +1,22 @@
+{
+  "name": "todo",
+  "description": "to do list",
+  "main": "app.js",
+  "authors": [
+    "Brad Pizzimenti and Ryan Brown"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "bootstrap": "^3.3.6"
+  }
+}
