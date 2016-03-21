@@ -4,8 +4,9 @@
     "rootDir": "app",
     "out": "build/js/app.js"
   },
-  "files": [
+  "files":[
     "app/to-do-people.ts",
+    "app/to-do-listing-functions.ts",
     "app/to-do-classes-interfaces.ts",
     "app/to-do-create-tasks.ts"
   ]
