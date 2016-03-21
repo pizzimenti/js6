@@ -2,6 +2,7 @@ module ToDoList {
   export interface IPerson {
     name: string;
     email: string;
+    phone?: string; //optional phone number
   }
 
   export interface ITask {
@@ -11,7 +12,6 @@ module ToDoList {
     markDone(): void;
     assignedTo?: IPerson;
   }
-
 
   export class Task implements ITask {
     done: boolean = false;

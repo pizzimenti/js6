@@ -1,23 +1,11 @@
-var diane: IPerson = {
-  name: "Diane D",
-  email: "diane@epicodus.com"
-}
+/// <reference path="to-do-classes-interfaces.ts" />
+/// <reference path="to-do-people.ts" />
 
-var thor: IPerson = {
-  name: "Thor Son of Odin",
-  email: "thor@asgard.com"
-}
-
-var loki: IPerson = {
-  name: "God of Mischief",
-  email: "loki@geocities.com"
-}
-
-
+var people = ToDoList.people;
 
 var tasks = [];
 tasks.push(new HomeTask("Do the dishes.", "High"));
-tasks.push(new HomeTask("Buy chocolate.", "Low", diane));
+tasks.push(new HomeTask("Buy chocolate.", "Low", people.diane));
 tasks.push(new HomeTask("Wash the laundry.", "High"));
 
 
@@ -30,9 +18,9 @@ tomorrow.setDate(today.getDate() + 1);
 var nextDay = new Date();
 nextDay.setDate(today.getDate() + 2);
 
-tasks.push(new WorkTask(today, "Update blog.", "High", diane));
-tasks.push(new WorkTask(tomorrow, "Go to meeting.", "Medium", thor));
-tasks.push(new WorkTask(nextDay, "Clean ceiling.", "Low", loki));
+tasks.push(new WorkTask(today, "Update blog.", "High", people.diane));
+tasks.push(new WorkTask(tomorrow, "Go to meeting.", "Medium", people.thor));
+tasks.push(new WorkTask(nextDay, "Clean ceiling.", "Low", people.loki));
 
 console.log(tasks);
 
