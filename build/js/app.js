@@ -76,7 +76,7 @@ var ToDoList;
 /// <reference path="to-do-classes-interfaces.ts" />
 var ToDoList;
 (function (ToDoList) {
-    ToDoList.describeTasksForPerson = function (assignee, taskCollection) {
+    ToDoList.allTaskDescriptionsForPerson = function (assignee, taskCollection) {
         var descriptions = [];
         for (var _i = 0, taskCollection_1 = taskCollection; _i < taskCollection_1.length; _i++) {
             var task = taskCollection_1[_i];
@@ -129,3 +129,12 @@ for (var _a = 0, lokiTasks_1 = lokiTasks; _a < lokiTasks_1.length; _a++) {
 //     throw error "No one is assigned";
 //   }
 // }
+$(function () {
+    var thorTasks = ToDoList.describeTasksForPerson(people.thor, tasks);
+    console.log("Here are Thor's tasks: ");
+    for (var _i = 0, thorTasks_2 = thorTasks; _i < thorTasks_2.length; _i++) {
+        var task = thorTasks_2[_i];
+        console.log(task);
+        $('#output').append("<p>" + task + "</p>");
+    }
+});

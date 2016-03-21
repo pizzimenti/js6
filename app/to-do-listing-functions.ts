@@ -1,7 +1,8 @@
 /// <reference path="to-do-classes-interfaces.ts" />
 
 module ToDoList {
-  export var describeTasksForPerson = function(assignee: IPerson, taskCollection: Task[]): String[] {
+
+  export var allTaskDescriptionsForPerson = function(assignee: IPerson, taskCollection: Task[]): String[] {
     var descriptions: String[] = [];
       for(var task of taskCollection){
         if(task.assignedTo === assignee) {
@@ -10,4 +11,7 @@ module ToDoList {
       }
       return descriptions;
   }
+
+
+
 }
