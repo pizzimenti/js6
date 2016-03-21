@@ -80,7 +80,12 @@ var ToDoList;
         var descriptions = [];
         for (var _i = 0, taskCollection_1 = taskCollection; _i < taskCollection_1.length; _i++) {
             var task = taskCollection_1[_i];
+            if (assignee === undefined) {
+                descriptions.push("not a valid user");
+                return descriptions;
+            }
             if (task.assignedTo === assignee) {
+                console.log(assignee);
                 descriptions.push(task.description);
             }
         }
@@ -107,19 +112,13 @@ tasks.push(new ToDoList.WorkTask(tomorrow, "Go to meeting.", "Medium", people.th
 tasks.push(new ToDoList.WorkTask(nextDay, "Clean ceiling.", "Low", people.loki));
 tasks.push(new ToDoList.WorkTask(tomorrow, "Buy a new shirt.", "Low", people.thor));
 tasks.push(new ToDoList.WorkTask(tomorrow, "Save the world.", "High", people.thor));
-console.log(tasks);
-var thorTasks = ToDoList.describeTasksForPerson(people.thor, tasks);
-console.log("Here are Thor's tasks: ");
-for (var _i = 0, thorTasks_1 = thorTasks; _i < thorTasks_1.length; _i++) {
-    var task = thorTasks_1[_i];
-    console.log(task);
-}
-var lokiTasks = ToDoList.describeTasksForPerson(people.loki, tasks);
-console.log("Here are Loki's tasks: ");
-for (var _a = 0, lokiTasks_1 = lokiTasks; _a < lokiTasks_1.length; _a++) {
-    var task = lokiTasks_1[_a];
-    console.log(task);
-}
+// var thorTasks = ToDoList.allTaskDescriptionsForPerson(people.thor, tasks);
+// for(var task of thorTasks){
+// }
+//
+// var lokiTasks = ToDoList.allTaskDescriptionsForPerson(people.loki, tasks);
+// for(var task of lokiTasks){
+// }
 // brainstorm on doing a reminder method
 // function remind (task) {
 //   if (assignedTo) {
@@ -129,12 +128,16 @@ for (var _a = 0, lokiTasks_1 = lokiTasks; _a < lokiTasks_1.length; _a++) {
 //     throw error "No one is assigned";
 //   }
 // }
-$(function () {
-    var thorTasks = ToDoList.describeTasksForPerson(people.thor, tasks);
-    console.log("Here are Thor's tasks: ");
-    for (var _i = 0, thorTasks_2 = thorTasks; _i < thorTasks_2.length; _i++) {
-        var task = thorTasks_2[_i];
-        console.log(task);
-        $('#output').append("<p>" + task + "</p>");
-    }
+jQuery(function () {
+    jQuery("#input").submit(function (e) {
+        e.preventDefault();
+        var selectedPerson = jQuery("#person").val();
+        console.log(selectedPerson);
+        console.log(people.loki);
+        var printTasks = ToDoList.allTaskDescriptionsForPerson(people[selectedPerson], tasks);
+        for (var _i = 0, printTasks_1 = printTasks; _i < printTasks_1.length; _i++) {
+            var task = printTasks_1[_i];
+            jQuery('#output').append("<p>" + task + "</p>");
+        }
+    });
 });

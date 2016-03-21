@@ -25,19 +25,13 @@ tasks.push(new ToDoList.WorkTask(tomorrow, "Buy a new shirt.", "Low", people.tho
 tasks.push(new ToDoList.WorkTask(tomorrow, "Save the world.", "High", people.thor));
 
 
-console.log(tasks);
-
-var thorTasks = ToDoList.describeTasksForPerson(people.thor, tasks);
-console.log("Here are Thor's tasks: ");
-for(var task of thorTasks){
-  console.log(task);
-}
-
-var lokiTasks = ToDoList.describeTasksForPerson(people.loki, tasks);
-console.log("Here are Loki's tasks: ");
-for(var task of lokiTasks){
-  console.log(task);
-}
+// var thorTasks = ToDoList.allTaskDescriptionsForPerson(people.thor, tasks);
+// for(var task of thorTasks){
+// }
+//
+// var lokiTasks = ToDoList.allTaskDescriptionsForPerson(people.loki, tasks);
+// for(var task of lokiTasks){
+// }
 
 // brainstorm on doing a reminder method
 
